@@ -1,0 +1,6 @@
+sources:
+  - name: steam
+    schema: dev_raw
+    tables: 
+      - name: steam_march2025
+        identifier: raw_march2025_games

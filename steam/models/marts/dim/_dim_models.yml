@@ -1,0 +1,140 @@
+models:
+  - name: dim_date
+    description: Contains dates of releases.
+    columns:
+
+      - name: pk_release_date_id
+        description: Surrogate Key of the table
+        data_tests:
+          - not_null
+          - unique
+
+      - name: appid
+        description: Games unique id.
+
+      - name: release_date
+        description: Releasing date of the game.
+
+  - name: dim_game
+    description: Contains core details about the game.
+    columns:
+
+      - name: pk_game_id
+        description: Surrogate Key of the table
+        data_tests:
+          - not_null
+          - unique
+      
+      - name: appid
+        description: Games unique id.
+
+      - name: name
+        description: Name of the game.
+
+      - name: required_age
+        description: Age requirement to play the game.
+
+      - name: detailed_description
+        description: Detailed description of the game.
+
+      - name: short_description
+        description: Short description of the game.
+
+      - name: about_game
+        description: Publisher's game description.
+
+      - name: notes
+        description: Publisher's notes.
+
+      - name: reviews
+        description: User's reviews of the game.
+
+      - name: support_url
+        description: Support url of the publisher.
+
+      - name: support_email
+        description: Support e-mail of the publisher.
+
+      - name: website
+        description: Website of the game.
+  
+  - name: dim_media
+    description: Contains images and movies of the game.
+    columns:
+
+      - name: pk_media_id
+        description: Surrogate Key of the table
+        data_tests:
+          - not_null
+          - unique
+
+      - name: appid
+        description: Games unique id.
+      
+      - name: header_image
+        description: Header image of the game.
+      
+      - name: screenshots
+        description: Screenshots of the game.
+
+      - name: movies
+        description: Clips from the game.
+  
+  - name: dim_metadata
+    description: Contains details of the game and more.
+    columns:
+
+      - name: pk_metadata_id
+        description: Surrogate Key of the table
+        data_tests:
+          - not_null
+          - unique
+      
+      - name: appid
+        description: Games unique id.
+
+      - name: developers
+        description: Developers of the game.
+
+      - name: publishers
+        description: Publishers of the game.
+
+      - name: categories
+        description: Categories of the game.
+      
+      - name: genres
+        description: Genres of the game.
+      
+      - name: tags
+        description: Tags of the game.
+       
+      - name: supported_languages
+        description: Game's supported languages.
+      
+      - name: full_audio_languages
+        description: Game's supported audio languages.
+      
+      - name: packages
+        description: Games packages.
+  
+  - name: dim_platform
+    description: Contains the platforms(OS) game can be played on
+    columns:
+
+      - name: pk_game_platform_id
+        description: Surrogate Key of the table
+        data_tests:
+          - not_null
+          - unique
+        
+      - name: appid
+        description: Games unique id.
+      
+      - name: is_windows
+        description: Binary column expresses whether the game can be played on Windows OS
+
+      - name: is_linux
+        description: Binary column expresses whether the game can be played on Linux OS
+
+      - name: is_mac
+        description: Binary column expresses whether the game can be played on Mac OS

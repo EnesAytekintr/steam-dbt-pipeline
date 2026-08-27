@@ -1,0 +1,235 @@
+models:
+  - name: src_2025
+    description: Source table.
+    columns:
+      - name: appid
+        description: Games unique id.
+        data_tests:
+          - not_null
+
+      - name: dbt_scd_id
+        description: Unique id for this record
+        data_tests:
+          - not_null
+          - unique
+
+      - name: release_date
+        description: Releasing date of the game.
+        data_tests:
+          - not_null
+
+      - name: name
+        description: Name of the game.
+
+      - name: required_age
+        description: Age requirement to play the game.
+      - name: detailed_description
+        description: Detailed description of the game.
+
+      - name: short_description
+        description: Short description of the game.
+
+      - name: about_game
+        description: Publisher's game description.
+
+      - name: notes
+        description: Publisher's notes.
+
+      - name: reviews
+        description: User's reviews of the game.
+
+      - name: support_url
+        description: Support url of the publisher.
+
+      - name: support_email
+        description: Support e-mail of the publisher.
+
+      - name: website
+        description: Website of the game.
+
+      - name: header_image
+        description: Header image of the game.
+      
+      - name: screenshots
+        description: Screenshots of the game.
+
+      - name: movies
+        description: Clips from the game.
+
+      - name: developers
+        description: Developers of the game.
+        data_tests:
+          - not_null
+
+      - name: publishers
+        description: Publishers of the game.
+        data_tests:
+          - not_null
+
+      - name: categories
+        description: Categories of the game.
+        data_tests:
+          - not_null
+      
+      - name: genres
+        description: Genres of the game.
+        data_tests:
+          - not_null
+      
+      - name: tags
+        description: Tags of the game.
+        data_tests:
+          - not_null
+       
+      - name: supported_languages
+        description: Game's supported languages.
+        data_tests:
+          - not_null
+      
+      - name: full_audio_languages
+        description: Game's supported audio languages.
+        data_tests:
+          - not_null
+      
+      - name: packages
+        description: Games packages.
+        data_tests:
+          - not_null
+      
+      - name: windows
+        description: Binary column expresses whether the game can be played on Windows OS
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["true", "false"]
+
+      - name: linux
+        description: Binary column expresses whether the game can be played on Linux OS
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["true", "false"]
+
+      - name: mac
+        description: Binary column expresses whether the game can be played on Mac OS
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["true", "false"]
+      
+      - name: price
+        description: Current listing price of the game.
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: discount
+        description: Current discount for the price of the game.
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: dlc_count
+        description: Quantity of the games dlc's.
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: achievements
+        description: Quantity of achievements of the game.
+        data_tests:
+          - not_null
+          - positive_values
+
+      - name: user_score
+        description: User's score for the game.
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: score_rank
+        description: IDK man leave me be :/
+        data_tests:
+          - positive_values
+        
+      - name: metacritic_score
+        description: Metacritic score of the game.
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: metacritic_url
+        description: Metacritic url of the game.
+      
+      - name: positive
+        description: Quantity of the positive reviews of the game.
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: negative
+        description: Quantity of the positive reviews of the game.
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: recommendations
+        description: Quantity of the recommendation of the game.
+        data_tests:
+          - not_null
+          - positive_values
+        
+      - name: estimated_owners
+        description: Estimated owner count of the game.
+        data_tests:
+          - not_null
+      
+      - name: peak_ccu
+        description: I realy dont know maaan...
+        data_tests:
+          - not_null
+          - positive_values
+        
+      - name: pct_pos_total
+        description: At this point i am just lost yk
+        data_tests:
+          - not_null
+      
+      - name: pct_pos_recent
+        description: Recent version of the last one i guess
+        data_tests:
+          - not_null
+
+      - name: num_reviews_total
+        description: Total number of the reviews.
+        data_tests:
+          - not_null
+      
+      - name: num_reviews_recent
+        description: Recent number of the reviews.
+        data_tests:
+          - not_null
+      
+      - name: average_playtime_forever
+        description: I am exhausted...
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: average_playtime_2weeks
+        description: FUCK TS!!!
+        data_tests:
+          - not_null
+          - positive_values
+
+      - name: median_playtime_forever
+        description: Median of the last one.
+        data_tests:
+          - not_null
+          - positive_values
+      
+      - name: median_playtime_2weeks
+        description: Median of the second last one but for 2 weeks.
+        data_tests:
+          - not_null
+          - positive_values

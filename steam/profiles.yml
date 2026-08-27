@@ -1,0 +1,12 @@
+steam:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DB_HOST', 'localhost') }}"
+      user: "{{ env_var('DB_USER', 'postgres') }}"
+      password: "{{ env_var('DB_PASSWORD', 'postgres') }}"
+      port: "{{ env_var('DB_PORT', 5433) | as_number }}"
+      dbname: "{{ env_var('DB_NAME', 'steam_dbt') }}"
+      schema: dev
+      threads: 4

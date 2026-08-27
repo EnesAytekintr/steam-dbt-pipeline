@@ -1,0 +1,122 @@
+models:
+  - name: fct_game_metrics
+    description: Fact table of the game.
+    columns:
+
+      - name: appid
+        description: Game's unique id.
+        data_tests:
+          - not_null
+
+      - name: current_price
+        description: Current listing price of the game.
+      
+      - name: discount
+        description: Current discount for the price of the game.
+      
+      - name: dlc_count
+        description: Quantity of the games dlc's.
+      
+      - name: achievements
+        description: Quantity of achievements of the game.
+
+      - name: user_score
+        description: User's score for the game.
+      
+      - name: score_rank
+        description: IDK man leave me be :/
+        
+      - name: metacritic_score
+        description: Metacritic score of the game.
+      
+      - name: metacritic_url
+        description: Metacritic url of the game.
+      
+      - name: positive
+        description: Quantity of the positive reviews of the game.
+      
+      - name: negative
+        description: Quantity of the positive reviews of the game.
+      
+      - name: recommendations
+        description: Quantity of the recommendation of the game.
+        
+      - name: estimated_owners
+        description: Estimated owner count of the game.
+      
+      - name: peak_ccu
+        description: I realy dont know maaan...
+        
+      - name: pct_pos_total
+        description: At this point i am just lost yk
+      
+      - name: pct_pos_recent
+        description: Recent version of the last one i guess
+
+      - name: num_reviews_total
+        description: Total number of the reviews.
+      
+      - name: num_reviews_recent
+        description: Recent number of the reviews.
+      
+      - name: average_playtime_forever
+        description: I am exhausted...
+      
+      - name: average_playtime_2weeks
+        description: FUCK TS!!!
+
+      - name: median_playtime_forever
+        description: Median of the last one.
+      
+      - name: median_playtime_2weeks
+        description: Median of the second last one but for 2 weeks.
+
+      - name: fk_release_date_id
+        description: Foreign key of dim_date.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: pk_release_date_id
+
+      - name: fk_game_id
+        description: Foreign key of dim_game.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('dim_game')
+                field: pk_game_id
+
+      - name: fk_media_id
+        description: Foreign key of dim_media.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('dim_media')
+                field: pk_media_id
+      
+      - name: fk_metadata_id
+        description: Foreign key of dim_metadata.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('dim_metadata')
+                field: pk_metadata_id
+      
+      - name: fk_game_platform_id
+        description: Foreign key of dim_platform.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('dim_platform')
+                field: pk_game_platform_id
